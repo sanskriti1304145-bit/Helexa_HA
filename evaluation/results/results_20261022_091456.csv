@@ -1,0 +1,45 @@
+id,category,edge_case,question,user_replies,expected_answer,agent_conversation,judge_grade,judge_reasoning,expected_booking,new_bookings,booking_check,seconds
+Q05,patient_history,no_records,Show me the medical history of Daniel Brooks,yes,"Daniel Brooks (P012), age 25, male, has no medical records on file. The agent says so and does not invent any diagnoses, medications or history.","User: Show me the medical history of Daniel Brooks
+Assistant: My plan:
+1. Identify the patient Daniel Brooks [identify_patient]
+2. Retrieve and summarize Daniel Brooks's medical history [get_patient_history]
+
+Is the patient Daniel Brooks (P012, age 25, male)? Please reply yes or no.
+
+User: yes
+Assistant: Thank you. Continuing with Daniel Brooks (P012).
+
+Medical history - Daniel Brooks (P012):
+Daniel Brooks (P012), age 25, male. No medical records on file yet.
+
+Note: Demo only, not medical advice. All patient data is synthetic. Always consult a qualified doctor.",CORRECT,"The context says Daniel Brooks (P012), age 25, male, has no medical records on file, and that the agent says so without inventing any diagnoses, medications, or history.
+
+The student's conversation shows the assistant first outlining a plan and asking for identity confirmation (P012, age 25, male). The user replied ""yes"", which matches the later replies noted in the question. The assistant then stated ""No medical records on file yet"" for Daniel Brooks (P012), age 25, male. It did not fabricate any diagnoses, medications, or history. The added disclaimer is harmless and does not conflict with the context.
+
+The facts (ID, age, sex, no records) all match the context. The identity confirmation step does not contradict anything. The answer is factually accurate.",none,none,pass,1.9
+Q15,booking,unknown_specialty,Book an oncologist for John Miller,yes,There is no oncology doctor. The agent says no oncologist is available (it may list the specialties that exist) and books nothing.,"User: Book an oncologist for John Miller
+Assistant: My plan:
+1. Identify which patient is John Miller [identify_patient]
+2. Retrieve and summarize John Miller's medical history before booking [get_patient_history]
+3. Book an appointment with an oncologist for the patient [book_appointment]
+
+Is the patient John Miller (P003, age 45, male)? Please reply yes or no.
+
+User: yes
+Assistant: Thank you. Continuing with John Miller (P003).
+
+Medical history - John Miller (P003):
+John Miller (ID P003) is a 45-year-old male whose main current condition is chronic insomnia. On 2025-08-19 he was diagnosed with insomnia, with difficulty falling asleep for 3 months linked to work stress, and he was given sleep hygiene advice. By 2026-02-11 the diagnosis was chronic insomnia, with little improvement. His current medication is Melatonin 3mg, unchanged across both visits. No lab results are recorded. The alert on record is ""No known allergies."" The latest plan from the doctor is a referral for cognitive behavioural therapy for insomnia.
+Based on 2 record(s); latest visit 2026-02-11. Alerts on file: No known allergies.
+
+Booking: No doctors found for 'Oncology'. Available specialties: Cardiology, Dermatology, Endocrinology, Gastroenterology, General Medicine, Nephrology, Neurology, Orthopedics, Psychiatry, Pulmonology.
+
+Note: Demo only, not medical advice. All patient data is synthetic. Always consult a qualified doctor.",CORRECT,"Step 1: The context says there is no oncology doctor, and the correct behavior is for the agent to say no oncologist is available (optionally listing existing specialties) and to book nothing.
+
+Step 2: The student's conversation shows the assistant planning to identify the patient, retrieve history, and book. It asks for confirmation of the patient, and the user says yes.
+
+Step 3: The final output says ""Booking: No doctors found for 'Oncology'. Available specialties: ..."" So it states no oncologist is available and lists the specialties, which the context allows. No booking was made.
+
+Step 4: The assistant also summarized the patient's medical history. This is extra information and does not conflict with the requirement. The context does not forbid it. Its plan included booking, but the booking attempt failed, so nothing was booked.
+
+Step 5: No statements contradict the expected outcome. The key outcome (no oncologist available, nothing booked) is satisfied.",none,none,pass,1.8

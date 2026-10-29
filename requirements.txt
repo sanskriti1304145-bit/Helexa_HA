@@ -1,0 +1,23 @@
+# Versions pinned to what was installed and tested (Python 3.14).
+# Install with:  pip install -r requirements.txt
+
+# Data and config
+pandas==3.0.6
+python-dotenv==1.2.4
+requests==2.34.2
+
+# LLM (Anthropic Claude) and the LangChain agent framework
+anthropic==1.17.0
+langchain==1.4.6
+langchain-core==1.6.12
+langchain-anthropic==1.7.6
+langchain-community==0.4.2      # FAISS vector store wrapper
+langchain-classic==1.0.8        # QAEvalChain for evaluation (Phase 8)
+langchain-huggingface==1.2.3    # local sentence-transformers embeddings
+
+# Vector store and free local embeddings
+faiss-cpu==1.15.1
+sentence-transformers==6.2.0
+
+# Dashboard
+streamlit==1.66.1

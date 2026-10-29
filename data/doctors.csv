@@ -1,0 +1,11 @@
+doctor_id,name,specialty,clinic,experience_years,available_days
+D01,Dr. Meera Shah,Nephrology,City Care Hospital,18,Mon-Fri
+D02,Dr. Arjun Mehta,Cardiology,Green Valley Clinic,15,Mon-Fri
+D03,Dr. Sarah Thompson,General Medicine,City Care Hospital,10,Mon-Fri
+D04,Dr. Rohan Verma,Endocrinology,Sunrise Medical Center,12,Mon-Fri
+D05,Dr. Emily Carter,Neurology,Green Valley Clinic,14,Mon-Fri
+D06,Dr. Priya Nair,Dermatology,Sunrise Medical Center,9,Mon-Fri
+D07,Dr. David Lee,Orthopedics,City Care Hospital,20,Mon-Fri
+D08,Dr. Anita Desai,Pulmonology,Green Valley Clinic,11,Mon-Fri
+D09,Dr. Michael Brown,Gastroenterology,Sunrise Medical Center,16,Mon-Fri
+D10,Dr. Kavita Rao,Psychiatry,Sunrise Medical Center,13,Mon-Fri

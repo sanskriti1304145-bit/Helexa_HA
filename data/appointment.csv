@@ -1,0 +1,11 @@
+appointment_id,patient_id,doctor_id,slot_id,reason,status,created_at
+A001,P001,D01,S002,CKD follow-up,confirmed,2026-10-16 10:15
+A002,P004,D01,S003,Kidney function review,cancelled,2026-10-15 16:40
+A003,P002,D10,S073,Anxiety follow-up,confirmed,2026-10-14 11:05
+A004,P003,D10,S074,Sleep problems,confirmed,2026-10-14 11:20
+A005,P005,D10,S075,Medication review,confirmed,2026-10-14 14:00
+A006,P006,D10,S076,Stress counselling,confirmed,2026-10-15 09:30
+A007,P007,D10,S077,Anxiety follow-up,confirmed,2026-10-15 10:10
+A008,P008,D10,S078,Depression screening,confirmed,2026-10-15 13:45
+A009,P009,D10,S079,Medication review,confirmed,2026-10-16 09:00
+A010,P010,D10,S080,Sleep problems,confirmed,2026-10-16 12:30

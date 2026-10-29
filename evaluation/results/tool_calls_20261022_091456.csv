@@ -1,0 +1,10 @@
+timestamp,tool_name,status,success,duration_ms,error_message
+2026-10-22 09:14:43,make_plan,success,True,1899.02,
+2026-10-22 09:14:45,identify_patient,needs_confirmation,True,3.31,
+2026-10-22 09:14:45,retrieve_patient_history,success,True,2.35,
+2026-10-22 09:14:45,judge_answer,correct,True,2496.45,
+2026-10-22 09:14:47,make_plan,success,True,1755.92,
+2026-10-22 09:14:49,identify_patient,needs_confirmation,True,4.64,
+2026-10-22 09:14:49,retrieve_patient_history,success,True,3.93,
+2026-10-22 09:14:49,prepare_booking,not_found,True,1.62,
+2026-10-22 09:14:49,judge_answer,correct,True,6979.92,

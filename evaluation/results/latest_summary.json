@@ -1,0 +1,114 @@
+{
+  "run_at": "2026-10-27 20:25:09",
+  "reference_now": "2026-10-21 12:00",
+  "agent_model": "claude-sonnet-5-5",
+  "judge_model": "claude-sonnet-5-5",
+  "questions": 21,
+  "judge_correct": 21,
+  "booking_checks_passed": 21,
+  "metrics_from_log": {
+    "booking_success_rate": {
+      "rate": 1.0,
+      "saved": 3,
+      "confirmed": 3
+    },
+    "booking_refusals": {
+      "total": 6,
+      "by_reason": {
+        "doctor fully booked": 2,
+        "requested slot refused (past, taken or wrong specialty)": 1,
+        "user declined the offer": 2,
+        "specialty does not exist": 1
+      }
+    },
+    "answer_precision": {
+      "precision": 1.0,
+      "correct": 21,
+      "graded": 21,
+      "judge_errors": 0
+    },
+    "per_tool": {
+      "add_to_waitlist": {
+        "calls": 2,
+        "no_error_rate": 1.0,
+        "avg_ms": 4.8,
+        "statuses": {
+          "needs_confirmation": 1,
+          "success": 1
+        }
+      },
+      "confirm_booking": {
+        "calls": 3,
+        "no_error_rate": 1.0,
+        "avg_ms": 16.0,
+        "statuses": {
+          "success": 3
+        }
+      },
+      "decline_booking": {
+        "calls": 2,
+        "no_error_rate": 1.0,
+        "avg_ms": 0.0,
+        "statuses": {
+          "declined": 2
+        }
+      },
+      "identify_patient": {
+        "calls": 16,
+        "no_error_rate": 1.0,
+        "avg_ms": 182.3,
+        "statuses": {
+          "needs_confirmation": 12,
+          "needs_choice": 3,
+          "needs_name": 1
+        }
+      },
+      "judge_answer": {
+        "calls": 21,
+        "no_error_rate": 1.0,
+        "avg_ms": 3827.3,
+        "statuses": {
+          "correct": 21
+        }
+      },
+      "make_plan": {
+        "calls": 20,
+        "no_error_rate": 1.0,
+        "avg_ms": 1673.6,
+        "statuses": {
+          "success": 18,
+          "out_of_scope": 2
+        }
+      },
+      "prepare_booking": {
+        "calls": 10,
+        "no_error_rate": 1.0,
+        "avg_ms": 669.6,
+        "statuses": {
+          "needs_confirmation": 6,
+          "no_slots": 2,
+          "invalid": 1,
+          "not_found": 1
+        }
+      },
+      "retrieve_patient_history": {
+        "calls": 14,
+        "no_error_rate": 1.0,
+        "avg_ms": 5.3,
+        "statuses": {
+          "success": 14
+        }
+      },
+      "summarize_disease_info": {
+        "calls": 4,
+        "no_error_rate": 1.0,
+        "avg_ms": 4620.8,
+        "statuses": {
+          "success": 3,
+          "no_results": 1
+        }
+      }
+    },
+    "total_logged_calls": 92
+  }
+}

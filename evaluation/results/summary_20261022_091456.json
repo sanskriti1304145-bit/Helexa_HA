@@ -1,0 +1,65 @@
+{
+  "run_at": "2026-10-22 09:14:56",
+  "reference_now": "2026-10-21 12:00",
+  "agent_model": "claude-sonnet-5-5",
+  "judge_model": "claude-sonnet-5-5",
+  "questions": 2,
+  "judge_correct": 2,
+  "booking_checks_passed": 2,
+  "metrics_from_log": {
+    "booking_success_rate": {
+      "rate": null,
+      "saved": 0,
+      "confirmed": 0
+    },
+    "answer_precision": {
+      "precision": 1.0,
+      "correct": 2,
+      "graded": 2,
+      "judge_errors": 0
+    },
+    "per_tool": {
+      "identify_patient": {
+        "calls": 2,
+        "no_error_rate": 1.0,
+        "avg_ms": 4.0,
+        "statuses": {
+          "needs_confirmation": 2
+        }
+      },
+      "judge_answer": {
+        "calls": 2,
+        "no_error_rate": 1.0,
+        "avg_ms": 4738.2,
+        "statuses": {
+          "correct": 2
+        }
+      },
+      "make_plan": {
+        "calls": 2,
+        "no_error_rate": 1.0,
+        "avg_ms": 1827.5,
+        "statuses": {
+          "success": 2
+        }
+      },
+      "prepare_booking": {
+        "calls": 1,
+        "no_error_rate": 1.0,
+        "avg_ms": 1.6,
+        "statuses": {
+          "not_found": 1
+        }
+      },
+      "retrieve_patient_history": {
+        "calls": 2,
+        "no_error_rate": 1.0,
+        "avg_ms": 3.1,
+        "statuses": {
+          "success": 2
+        }
+      }
+    },
+    "total_logged_calls": 9
+  }
+}

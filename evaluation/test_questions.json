@@ -1,0 +1,249 @@
+{
+  "description": "Evaluation questions for the Agentic Healthcare Assistant. Each question is a short scripted conversation: 'turns' are the user's messages in order (the first is the question, the rest are replies such as 'yes' or a patient ID). 'expected_answer' is the known correct answer the judge compares against. 'expected_booking' is the booking that must exist afterwards (null = nothing may be booked). Answers about disease information come from the MedlinePlus pages saved in evaluation/reference/.",
+  "reference_now": "2026-10-21 12:00",
+  "questions": [
+    {
+      "id": "Q01",
+      "category": "full_scenario",
+      "edge_case": null,
+      "turns": [
+        "My 70-year-old father has chronic kidney disease. I want to book a nephrologist for him. Also, can you summarize latest treatment methods?",
+        "yes",
+        "yes"
+      ],
+      "expected_answer": "Identifies the patient as Ramesh Kumar (P001, 70, male) and asks for confirmation. Shows his history: chronic kidney disease stage 3b, current medications Losartan 100mg and sodium bicarbonate, alerts: penicillin allergy, avoid NSAIDs, monitor potassium. Books Dr. Meera Shah (Nephrology, City Care Hospital) on 2026-10-21 at 14:00 (slot S004). Summarizes MedlinePlus information: treatments cannot cure chronic kidney disease but may slow it; they include medicines to lower blood pressure, control blood sugar and lower cholesterol; if the kidneys fail, dialysis or a kidney transplant is needed. Cites medlineplus.gov.",
+      "expected_booking": {
+        "patient_id": "P001",
+        "slot_id": "S004"
+      }
+    },
+    {
+      "id": "Q02",
+      "category": "patient_history",
+      "edge_case": null,
+      "turns": [
+        "Show me the medical history of Anita Sharma",
+        "yes"
+      ],
+      "expected_answer": "Anita Sharma (P002), 34, female: generalized anxiety disorder treated with Sertraline 50mg; symptoms were improving at the 2026-03-02 visit; no known allergies; plan: continue the current dose and review in 6 months.",
+      "expected_booking": null
+    },
+    {
+      "id": "Q03",
+      "category": "patient_history",
+      "edge_case": "similar_names",
+      "turns": [
+        "Show me the medical history of Ramesh Kumar",
+        "P001"
+      ],
+      "expected_answer": "Ramesh Kumar (P001, age 70) is an exact name match. Rakesh Kumar (P011, age 48) has a similar name, so the agent offers both in a choice list (with a 'None of these' option) and asks which one is meant. After the user picks P001 it shows Ramesh Kumar's history: chronic kidney disease stage 3b, Losartan 100mg and sodium bicarbonate, penicillin allergy, avoid NSAIDs.",
+      "expected_booking": null
+    },
+    {
+      "id": "Q04",
+      "category": "patient_history",
+      "edge_case": "name_age_mismatch",
+      "turns": [
+        "Show the medical history of my 70-year-old father Rakesh Kumar",
+        "P001"
+      ],
+      "expected_answer": "The typed name Rakesh Kumar belongs to P011, who is 48, not 70. The agent offers both Rakesh Kumar (P011, 48, exact name match, not matching age 70) and Ramesh Kumar (P001, 70, a similar name that matches the age) in a choice list and asks which one is meant. After the user picks P001 it shows Ramesh Kumar's chronic kidney disease history. It does not show Rakesh Kumar's records.",
+      "expected_booking": null
+    },
+    {
+      "id": "Q05",
+      "category": "patient_history",
+      "edge_case": "no_records",
+      "turns": [
+        "Show me the medical history of Daniel Brooks",
+        "yes"
+      ],
+      "expected_answer": "Daniel Brooks (P012), age 25, male, has no medical records on file. The agent says so and does not invent any diagnoses, medications or history.",
+      "expected_booking": null
+    },
+    {
+      "id": "Q06",
+      "category": "booking",
+      "edge_case": "fully_booked",
+      "turns": [
+        "Please book a psychiatrist for Michael Johnson",
+        "yes"
+      ],
+      "expected_answer": "No psychiatry appointment can be made: Dr. Kavita Rao (Psychiatry) has no openings in the next 2 weeks, so nothing is booked. The agent offers options such as joining the waiting list.",
+      "expected_booking": null
+    },
+    {
+      "id": "Q07",
+      "category": "booking",
+      "edge_case": "past_slot",
+      "turns": [
+        "Book a nephrologist for Sunita Verma",
+        "yes",
+        "S003",
+        "no"
+      ],
+      "expected_answer": "The agent offers Dr. Meera Shah (Nephrology) on 2026-10-21 at 14:00 (slot S004). When the user asks for slot S003, the agent refuses because S003 (2026-10-20) is in the past. After the user says no, nothing is booked.",
+      "expected_booking": null
+    },
+    {
+      "id": "Q08",
+      "category": "disease_info",
+      "edge_case": "disease_not_found",
+      "turns": [
+        "What are the treatment options for zorblaxitis?"
+      ],
+      "expected_answer": "MedlinePlus has no health topics about zorblaxitis, so the agent says it found no information and does not give any treatment information from its own knowledge.",
+      "expected_booking": null
+    },
+    {
+      "id": "Q09",
+      "category": "disease_info",
+      "edge_case": null,
+      "turns": [
+        "What are the treatment options for asthma?"
+      ],
+      "expected_answer": "Based on MedlinePlus: a treatment plan made with a health care provider; strategies to avoid triggers (for example tobacco smoke); short-term (quick-relief) medicines, including an inhaler to carry at all times; daily control medicines that reduce airway inflammation; emergency care if a severe attack does not respond to quick-relief medicines; for some adults with severe uncontrolled asthma, bronchial thermoplasty. Cites medlineplus.gov.",
+      "expected_booking": null
+    },
+    {
+      "id": "Q10",
+      "category": "full_scenario",
+      "edge_case": null,
+      "turns": [
+        "My 45-year-old husband has insomnia. Can you show his history and tell me how insomnia is treated?",
+        "yes"
+      ],
+      "expected_answer": "Identifies the patient as John Miller (P003, 45, male) and asks for confirmation. History: chronic insomnia linked to work stress, Melatonin 3mg with little improvement, no known allergies, referred for cognitive behavioural therapy for insomnia. MedlinePlus information: treatments include lifestyle changes and good sleep habits, cognitive-behavioral therapy (CBT), and medicines; if insomnia is caused by another problem, that problem should be treated. Cites medlineplus.gov.",
+      "expected_booking": null
+    },
+    {
+      "id": "Q11",
+      "category": "booking",
+      "edge_case": "past_slot",
+      "turns": [
+        "Book a cardiologist for Arvind Iyer",
+        "yes",
+        "yes"
+      ],
+      "expected_answer": "Shows Arvind Iyer's history (atrial fibrillation and anxiety, Apixaban 5mg and Sertraline 25mg, bleeding risk). Books Dr. Arjun Mehta (Cardiology, Green Valley Clinic) on 2026-10-22 at 15:00 (slot S013). The earlier cardiology slot on 2026-10-21 at 11:00 has already passed and is not offered.",
+      "expected_booking": {
+        "patient_id": "P009",
+        "slot_id": "S013"
+      }
+    },
+    {
+      "id": "Q12",
+      "category": "booking",
+      "edge_case": null,
+      "turns": [
+        "Book a dermatologist for Priya Patel",
+        "yes",
+        "no"
+      ],
+      "expected_answer": "Offers Dr. Priya Nair (Dermatology, Sunrise Medical Center) on 2026-10-21 at 16:00 (slot S043). The user says no, so nothing is booked.",
+      "expected_booking": null
+    },
+    {
+      "id": "Q13",
+      "category": "patient_history",
+      "edge_case": null,
+      "turns": [
+        "My 62-year-old mother has diabetes and kidney problems. Can you show her medical history?",
+        "yes"
+      ],
+      "expected_answer": "Identifies the patient as Sunita Verma (P004, 62, female) and asks for confirmation. History: type 2 diabetes with early diabetic nephropathy; Metformin 500mg and Losartan 25mg; latest labs creatinine 1.3 mg/dL and urine albumin-creatinine ratio 85 mg/g; sulfa drug allergy; repeat kidney tests advised in 6 months.",
+      "expected_booking": null
+    },
+    {
+      "id": "Q14",
+      "category": "identification",
+      "edge_case": "ambiguous_patient",
+      "turns": [
+        "Can you show my father's medical history?"
+      ],
+      "expected_answer": "The request gives no name or age, so several male patients are possible. The agent asks for the patient's full name or patient ID and does not show anyone's medical history.",
+      "expected_booking": null
+    },
+    {
+      "id": "Q15",
+      "category": "booking",
+      "edge_case": "unknown_specialty",
+      "turns": [
+        "Book an oncologist for John Miller",
+        "yes"
+      ],
+      "expected_answer": "There is no oncology doctor. The agent says no oncologist is available (it may list the specialties that exist) and books nothing.",
+      "expected_booking": null
+    },
+    {
+      "id": "Q16",
+      "category": "booking",
+      "edge_case": "similar_names",
+      "turns": [
+        "Book a nephrologist for Ramesh Kumar",
+        "P001",
+        "S006",
+        "yes"
+      ],
+      "expected_answer": "Rakesh Kumar has a similar name, so the agent offers both patients in a choice list and the user picks P001 (Ramesh Kumar). It offers the earliest nephrology slot (S004, 2026-10-21 at 14:00) and lists other times; when the user asks for S006 instead, it books Ramesh Kumar with Dr. Meera Shah on 2026-10-23 at 15:30 (slot S006).",
+      "expected_booking": {
+        "patient_id": "P001",
+        "slot_id": "S006"
+      }
+    },
+    {
+      "id": "Q17",
+      "category": "out_of_scope",
+      "edge_case": "off_topic",
+      "turns": [
+        "Can you tell me a joke about football?"
+      ],
+      "expected_answer": "The agent says this is outside what it can help with (patient records, appointments and disease information). It tells no joke, books nothing and changes no records.",
+      "expected_booking": null
+    },
+    {
+      "id": "Q18",
+      "category": "out_of_scope",
+      "edge_case": "personal_medical_advice",
+      "turns": [
+        "How much ibuprofen should I take for my headache?"
+      ],
+      "expected_answer": "The agent says it cannot give personal medical advice and offers general MedlinePlus information or help with an appointment. It gives no dose or drug amount and books nothing.",
+      "expected_booking": null
+    },
+    {
+      "id": "Q19",
+      "category": "out_of_scope",
+      "edge_case": "vague_input",
+      "turns": [
+        "hmm"
+      ],
+      "expected_answer": "The agent says it did not catch that and asks what the user would like to do. It books nothing and makes no medical statements.",
+      "expected_booking": null
+    },
+    {
+      "id": "Q20",
+      "category": "out_of_scope",
+      "edge_case": "cancel_midway",
+      "turns": [
+        "Book a cardiologist for Arvind Iyer",
+        "never mind, too late"
+      ],
+      "expected_answer": "The agent starts to identify the patient (Arvind Iyer) and, when the user says never mind, replies that the request is cancelled. It books nothing.",
+      "expected_booking": null
+    },
+    {
+      "id": "Q21",
+      "category": "booking",
+      "edge_case": "waiting_list",
+      "turns": [
+        "Please book a psychiatrist for Michael Johnson",
+        "yes",
+        "Join the waiting list",
+        "yes"
+      ],
+      "expected_answer": "Dr. Kavita Rao (Psychiatry) has no openings in the next 2 weeks, so nothing is booked. The agent offers to put Michael Johnson on the waiting list, asks for confirmation, and after the user says yes confirms that Michael Johnson is on the waiting list for Psychiatry. No appointment is booked.",
+      "expected_booking": null
+    }
+  ]
+}

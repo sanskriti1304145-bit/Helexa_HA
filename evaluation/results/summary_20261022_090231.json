@@ -1,0 +1,87 @@
+{
+  "run_at": "2026-10-22 09:02:31",
+  "reference_now": "2026-10-21 12:00",
+  "agent_model": "claude-sonnet-5-5",
+  "judge_model": "claude-sonnet-5-5",
+  "questions": 16,
+  "judge_correct": 16,
+  "booking_checks_passed": 16,
+  "metrics_from_log": {
+    "booking_success_rate": {
+      "rate": 1.0,
+      "saved": 3,
+      "confirmed": 3
+    },
+    "answer_precision": {
+      "precision": 1.0,
+      "correct": 16,
+      "graded": 16,
+      "judge_errors": 0
+    },
+    "per_tool": {
+      "confirm_booking": {
+        "calls": 3,
+        "no_error_rate": 1.0,
+        "avg_ms": 14.5,
+        "statuses": {
+          "success": 3
+        }
+      },
+      "identify_patient": {
+        "calls": 14,
+        "no_error_rate": 1.0,
+        "avg_ms": 200.6,
+        "statuses": {
+          "needs_confirmation": 10,
+          "needs_choice": 3,
+          "needs_name": 1
+        }
+      },
+      "judge_answer": {
+        "calls": 16,
+        "no_error_rate": 1.0,
+        "avg_ms": 4600.8,
+        "statuses": {
+          "correct": 16
+        }
+      },
+      "make_plan": {
+        "calls": 16,
+        "no_error_rate": 1.0,
+        "avg_ms": 2487.7,
+        "statuses": {
+          "success": 16
+        }
+      },
+      "prepare_booking": {
+        "calls": 9,
+        "no_error_rate": 1.0,
+        "avg_ms": 1348.4,
+        "statuses": {
+          "needs_confirmation": 6,
+          "no_slots": 1,
+          "invalid": 1,
+          "not_found": 1
+        }
+      },
+      "retrieve_patient_history": {
+        "calls": 13,
+        "no_error_rate": 1.0,
+        "avg_ms": 4.5,
+        "statuses": {
+          "success": 13
+        }
+      },
+      "summarize_disease_info": {
+        "calls": 4,
+        "no_error_rate": 1.0,
+        "avg_ms": 5766.3,
+        "statuses": {
+          "success": 3,
+          "no_results": 1
+        }
+      }
+    },
+    "total_logged_calls": 75
+  }
+}

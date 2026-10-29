@@ -1,0 +1,24 @@
+record_id,patient_id,visit_date,diagnosis,medications,lab_results,alerts,doctor_notes
+R001,P001,2023-06-10,Hypertension,Amlodipine 5mg,BP 152/94,Penicillin allergy,Newly diagnosed. Advised to reduce salt intake and walk daily.
+R002,P001,2024-02-14,Chronic kidney disease stage 2,Losartan 50mg,Creatinine 1.5 mg/dL; eGFR 58,Penicillin allergy,Mild kidney function decline noted. Started Losartan and advised low-sodium diet.
+R003,P001,2025-03-12,Chronic kidney disease stage 3,Losartan 50mg; low-sodium diet,Creatinine 2.1 mg/dL; eGFR 38,Penicillin allergy; avoid NSAIDs,Kidney function declining slowly. Referred to nephrology. Patient reports mild fatigue and ankle swelling.
+R004,P001,2026-04-20,Chronic kidney disease stage 3b,Losartan 100mg; sodium bicarbonate,Creatinine 2.4 mg/dL; eGFR 31; potassium 5.2,Penicillin allergy; avoid NSAIDs; monitor potassium,Potassium slightly high. Dose adjusted. Nephrology follow-up recommended every 6 months. Discussed dialysis planning as a future possibility.
+R005,P002,2025-05-08,Generalized anxiety disorder,Sertraline 50mg,None,No known allergies,Presented with persistent worry and poor concentration. Started medication and advised therapy.
+R006,P002,2026-03-02,Generalized anxiety disorder,Sertraline 50mg,None,No known allergies,Symptoms improving. Continue current dose and review in 6 months.
+R007,P003,2025-08-19,Insomnia,Melatonin 3mg,None,No known allergies,Difficulty falling asleep for 3 months linked to work stress. Sleep hygiene advice given.
+R008,P003,2026-02-11,Chronic insomnia,Melatonin 3mg,None,No known allergies,Little improvement. Referred for cognitive behavioural therapy for insomnia.
+R009,P004,2024-09-05,Type 2 diabetes,Metformin 500mg,HbA1c 7.8%,Sulfa drug allergy,Newly diagnosed. Diet counselling and exercise plan provided.
+R010,P004,2025-11-18,Early diabetic nephropathy,Metformin 500mg; Losartan 25mg,Creatinine 1.3 mg/dL; urine albumin-creatinine ratio 85 mg/g,Sulfa drug allergy,Early kidney involvement detected. Started Losartan. Repeat kidney tests advised in 6 months.
+R011,P005,2024-11-22,Hypertension,Lisinopril 10mg,BP 148/92,No known allergies,Started on medication. Home blood pressure monitoring advised.
+R012,P005,2026-01-30,Major depressive disorder,Escitalopram 10mg; Lisinopril 10mg,PHQ-9 score 14,Monitor blood pressure,Low mood and loss of interest for 2 months. Started antidepressant. Review in 3 months.
+R013,P006,2026-05-14,Stress-related tension headaches,Paracetamol 500mg as needed,None,Latex allergy,Headaches linked to exam and work stress. Relaxation techniques and counselling suggested.
+R014,P007,2025-07-09,Panic disorder,Escitalopram 10mg,None,No known allergies,Recurrent panic attacks for 4 months. Medication started.
+R015,P007,2026-06-17,Panic disorder,Escitalopram 10mg,None,No known allergies,Attacks less frequent. Therapy sessions added to treatment plan.
+R016,P008,2024-12-03,Hypothyroidism,Levothyroxine 75mcg,TSH 6.2 mIU/L,Aspirin allergy,Started thyroid replacement. Recheck in 3 months.
+R017,P008,2026-07-21,Hypothyroidism with low mood,Levothyroxine 75mcg,TSH 3.1 mIU/L,Aspirin allergy,Thyroid levels now normal. Low mood and poor sleep reported. Referred to psychiatry for screening.
+R018,P009,2024-04-16,Atrial fibrillation,Apixaban 5mg,ECG shows irregular rhythm,Bleeding risk; avoid NSAIDs,Started anticoagulant. Educated on bleeding signs.
+R019,P009,2025-10-09,Atrial fibrillation with anxiety,Apixaban 5mg,None,Bleeding risk; avoid NSAIDs,Heart rate controlled. Patient reports anxiety and poor sleep.
+R020,P009,2026-08-25,Atrial fibrillation; anxiety,Apixaban 5mg; Sertraline 25mg,None,Bleeding risk; review antidepressant choice with cardiology,Low-dose antidepressant started. Medication interaction review requested.
+R021,P010,2026-04-03,Chronic insomnia,Zolpidem 5mg short term,None,No known allergies,Poor sleep for over 6 months. Short course of medication prescribed and therapy recommended.
+R022,P011,2025-12-01,Type 2 diabetes,Metformin 500mg,HbA1c 8.1%,No known allergies,Newly diagnosed. Lifestyle changes advised.
+R023,P011,2026-06-30,Dyslipidemia,Atorvastatin 20mg; Metformin 500mg,LDL 162 mg/dL; HbA1c 7.4%,No known allergies,Cholesterol high. Statin started. Diabetes control improving.

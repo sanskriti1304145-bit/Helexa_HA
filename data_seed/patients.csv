@@ -1,0 +1,13 @@
+patient_id,name,age,gender,contact_person,contact_phone,created_date
+P001,Ramesh Kumar,70,Male,son,,2024-01-15
+P002,Anita Sharma,34,Female,self,,2025-05-08
+P003,John Miller,45,Male,self,,2025-08-19
+P004,Sunita Verma,62,Female,daughter,,2024-09-05
+P005,Robert Davis,58,Male,self,,2024-11-22
+P006,Priya Patel,29,Female,self,,2026-05-14
+P007,Michael Johnson,41,Male,wife,,2025-07-09
+P008,Linda Garcia,52,Female,self,,2024-12-03
+P009,Arvind Iyer,67,Male,daughter,,2024-04-16
+P010,Emma Wilson,38,Female,self,,2026-04-03
+P011,Rakesh Kumar,48,Male,self,,2025-12-01
+P012,Daniel Brooks,25,Male,self,,2026-10-10
